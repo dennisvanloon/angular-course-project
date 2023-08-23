@@ -1,0 +1,8 @@
+<p>directive-component works!</p>
+
+<button
+  class="btn btn-primary"
+  (click)="clickDisplayDetails()">Display details</button>
+  <p *ngIf="isVisible">Secret password = 'tuna'</p>
+  <p *ngFor="let clickDate of clickDates; let i = index" [ngStyle]="{'background-color': i > 4 ? 'lightblue' : 'white' }" [ngClass]="{'special': i > 4}">Button clicked at {{ clickDate }}</p>
+
