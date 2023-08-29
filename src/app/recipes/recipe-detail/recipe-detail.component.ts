@@ -7,5 +7,6 @@ import {Recipe} from "../recipe.model";
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent {
+  isOpen = false;
   @Input() recipe: Recipe;
 }
