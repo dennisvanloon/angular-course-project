@@ -5,18 +5,18 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('recipe')">Recipes</a>
+          <a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+          <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
         </li>
       </ul>
       <ul class="navbar-nav me-sm-0">
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="#" (click)="isOpen = !isOpen">Manage</a>
+          <a class="nav-link dropdown-toggle" style="cursor: pointer;" (click)="isOpen = !isOpen">Manage</a>
           <ul class="dropdown-menu" [ngClass]="{'show' : isOpen}">
-            <li><a class="dropdown-item" href="#">Save data</a></li>
-            <li><a class="dropdown-item" href="#">Fetch data</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer;">Save data</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer;">Fetch data</a></li>
           </ul>
         </li>
       </ul>
