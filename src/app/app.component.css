@@ -1,0 +1,11 @@
+.container {
+  margin-top: 30px;
+}
+
+.nav-item.active {
+  font-weight: bolder;
+}
+
+.row {
+  margin-bottom: 20px;
+}
