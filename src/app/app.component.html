@@ -1,26 +1,45 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-sm-10 col-md-8">
-      <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="projectForm" (ngSubmit)="onSaveProject()">
         <div class="form-group">
-          <label for="email">Mail</label>
-          <input type="email" id="email" ngModel name="email" required email class="form-control" #email="ngModel">
-          <span class="text-warning" *ngIf="!email.valid && email.touched">Enter a valid e-mail</span>
+          <label for="name">Project Name</label>
+          <input type="text" id="name" formControlName="projectName" class="form-control">
         </div>
         <div class="form-group">
-          <label for="subscription">Choose a subscription</label>
-          <select type="subscription" id="subscription" [ngModel]="selectedSubscription" name="subscription" required email class="form-control">
-            <option *ngFor="let subscription of subscriptions" [value]="subscription">{{ subscription }}</option>
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="status">Project status</label>
+          <select id="status" class="form-control" formControlName="projectStatus">
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" ngModel name="password" required class="form-control" #password="ngModel">
-          <span class="text-warning" *ngIf="!password.valid && password.touched">Enter a valid password</span>
-        </div>
-        <p *ngIf="!signupForm.valid && signupForm.touched">The form is invalid</p>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Create project</button>
       </form>
+<!--      <form #signupForm="ngForm" (ngSubmit)="onSubmit()">-->
+<!--        <div class="form-group">-->
+<!--          <label for="email">Mail</label>-->
+<!--          <input type="email" id="email" ngModel name="email" required email class="form-control" #email="ngModel">-->
+<!--          <span class="text-warning" *ngIf="!email.valid && email.touched">Enter a valid e-mail</span>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="subscription">Choose a subscription</label>-->
+<!--          <select type="subscription" id="subscription" [ngModel]="selectedSubscription" name="subscription" required email class="form-control">-->
+<!--            <option *ngFor="let subscription of subscriptions" [value]="subscription">{{ subscription }}</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="password">Password</label>-->
+<!--          <input type="password" id="password" ngModel name="password" required class="form-control" #password="ngModel">-->
+<!--          <span class="text-warning" *ngIf="!password.valid && password.touched">Enter a valid password</span>-->
+<!--        </div>-->
+<!--        <p *ngIf="!signupForm.valid && signupForm.touched">The form is invalid</p>-->
+<!--        <button class="btn btn-primary" type="submit">Submit</button>-->
+<!--      </form>-->
     </div>
   </div>
 </div>
